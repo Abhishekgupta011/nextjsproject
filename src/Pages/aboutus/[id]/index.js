@@ -1,4 +1,4 @@
-// pages/aboutus/[id].js
+// pages/aboutus/[idpage].js
 
 import { useRouter } from 'next/router';
 
