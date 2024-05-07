@@ -1,4 +1,9 @@
-const NewsPage = ()=>{
-    return <h1>The News page</h1>
+const newsPage = () =>{
+    return(
+        <div>
+            <h1>News Page</h1>
+
+        </div>
+    )
 }
-export default NewsPage;
+export default newsPage;

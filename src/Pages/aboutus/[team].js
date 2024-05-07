@@ -1,5 +1,3 @@
-// pages/aboutus/[idpage].js
-
 import { useRouter } from 'next/router';
 
 // Hardcoded list of team members
@@ -9,12 +7,16 @@ const teamDetails = [
   { id: '3', name: 'Suresh', role: 'Frontend Developer' }
 ];
 
-function TeamMemberDetails() {
+const TeamMemberDetails = ()=> {
   const router = useRouter();
-  const { id } = router.query;
-
+  const { team } = router.query;
+  //you can guard against undefined values or use conditional rendering based on the presence of router.query
+  if (!team) {
+    return <div>Loading...</div>;
+  }
   // Find the team member with the given ID
-  const member = teamDetails.find(member => member.id === id);
+  const member = teamDetails.find(member => member.id === team);
+  console.log(member);
 
   // Render team member details or "Developer doesn't exist" message
   return (
